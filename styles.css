@@ -7,14 +7,12 @@ div.container {
 
 div.rowContainer {
     display: flex;
-    padding: 0px;
     margin: 0;
 }
 
 div.square {
     background-color: grey;
     border: 1px solid black;
-    padding: 20px;
 }
 
 div.colored {
