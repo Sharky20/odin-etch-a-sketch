@@ -1,5 +1,5 @@
 const container = document.querySelector(".container");
-let size = 14;
+let size = 64;
 
 for (let i = 0; i < size; i++) {
     let row = document.createElement("div");
