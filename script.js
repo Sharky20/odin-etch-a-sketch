@@ -3,6 +3,9 @@ const button = document.querySelector(".resetButton");
 let size = 30;
 
 function resizeGrid(newSize) {
+    while (newSize > 100) {
+        newSize = prompt("Please enter a number less than 101");
+    }
     const oldGrid = Array.from(document.querySelectorAll(".rowContainer"));
     oldGrid.forEach((row) => row.parentElement.removeChild(row));
 
