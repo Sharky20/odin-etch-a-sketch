@@ -5,6 +5,10 @@ div.container {
     align-items: center;
 }
 
+body {
+    background-color: aliceblue;
+}
+
 .top-bar {
     margin: auto;
     display:flex;
