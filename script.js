@@ -1,17 +1,27 @@
 const container = document.querySelector(".container");
-let size = 64;
+const button = document.querySelector(".resetButton");
+let size = 30;
 
-for (let i = 0; i < size; i++) {
-    let row = document.createElement("div");
-    row.classList.add("rowContainer");
-    for (let j = 0; j < size; j++) {
-        let square = document.createElement("div");
-        square.classList.add("square");
-        square.style.padding = `${20*16 / size}px`;
-        square.addEventListener("mouseover", (e) => {
-            square.classList.add("colored");
-        });
-        row.appendChild(square);
+function resizeGrid(newSize) {
+    const oldGrid = Array.from(document.querySelectorAll(".rowContainer"));
+    oldGrid.forEach((row) => row.parentElement.removeChild(row));
+
+    for (let i = 0; i < newSize; i++) {
+        let row = document.createElement("div");
+        row.classList.add("rowContainer");
+        for (let j = 0; j < newSize; j++) {
+            let square = document.createElement("div");
+            square.classList.add("square");
+            square.style.padding = `${20*16 / newSize}px`;
+            square.addEventListener("mouseover", (e) => {
+                square.classList.add("colored");
+            });
+            row.appendChild(square);
+        }
+        container.appendChild(row);
     }
-    container.appendChild(row);
 }
+
+resizeGrid(size);
+
+button.addEventListener("click", (e) => resizeGrid(prompt("How many squares wide for new grid?")));
