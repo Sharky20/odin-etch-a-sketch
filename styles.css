@@ -14,5 +14,9 @@ div.rowContainer {
 div.square {
     background-color: grey;
     border: 1px solid black;
-    padding: 10px;
+    padding: 20px;
+}
+
+div.colored {
+    background-color: red;
 }
